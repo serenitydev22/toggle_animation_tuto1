@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(223, 215, 215);
+}
+
+@keyframes opacityTransition {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes transformX {
+    from{
+        transform: translateX(-50px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+.App{
+    display: flex;
+    gap: 3.33%;
+
+    .box{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    button, .textbox{
+        width: 60%;
+        
+    }
+
+    button{
+        border: none;
+        box-shadow: 0px 0px 3px 3px #ccc;
+        background: rgb(212, 197, 197);
+        cursor: pointer;
+        margin-bottom: 20px;
+
+        &:hover{
+            background: lightcoral;
+        }
+    }
+
+    .textbox{
+        background: blue;
+        padding: 10px 20px;
+
+        &.Two{
+            //For those that have the classes textbox and Two at the same time
+            animation: opacityTransition 1s ease-in;
+        }
+
+        &.Three{
+            //classes textbox and Three
+            animation: transformX 2s ease-in;
+        }
+    }
+
+
+}
+
